@@ -11,8 +11,6 @@ assertNull(process.env.EIP_ALLOCATION_ID, "EIP_ALLOCATION_ID環境変数が未�
 const TAILSCALE_AUTHKEY = process.env.TAILSCALE_AUTHKEY;
 const EIP_ALLOCATION_ID = process.env.EIP_ALLOCATION_ID;
 
-console.log(TAILSCALE_AUTHKEY);
-
 export class TailscaleTestCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
