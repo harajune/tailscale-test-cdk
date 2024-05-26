@@ -31,7 +31,6 @@ export class TailscaleTestCdkStack extends cdk.Stack {
     const vpc = new ec2.Vpc(this, "vpc");
 
     // instance initial setup
-    //TODO: remove credentials
     const userData = ec2.UserData.forLinux({shebang: '#!/bin/bash'});
     userData.addCommands(
       'sudo yum install yum-utils',
@@ -58,7 +57,6 @@ export class TailscaleTestCdkStack extends cdk.Stack {
       userData: userData
     });
 
-    //TODO: remove the hardcoded id
     // associate the allocated Elastic IP with the instance
     new ec2.CfnEIPAssociation(this, "static ip", {
       allocationId: EIP_ALLOCATION_ID,
